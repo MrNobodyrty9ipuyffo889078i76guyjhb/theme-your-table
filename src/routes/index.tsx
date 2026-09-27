@@ -87,7 +87,6 @@ function Index() {
               <a className="transition-colors hover:text-flame" href="#work">Our work</a>
               <a className="transition-colors hover:text-flame" href="#about">About</a>
             </nav>
-            <Button variant="flame" size="nav" className="hidden md:inline-flex" asChild><a href="#work">Create Menu <ArrowUpRight /></a></Button>
             <Button variant="heroGhost" size="icon" className="md:hidden" aria-label={mobileOpen ? "Close menu" : "Open menu"} onClick={() => setMobileOpen(!mobileOpen)}>{mobileOpen ? <X /> : <MenuIcon />}</Button>
           </div>
           {mobileOpen && <nav className="flex flex-col gap-1 border-t border-paper/15 bg-ink px-6 py-4 text-sm md:hidden" aria-label="Mobile navigation">{[["Home", "#home"], ["Menu styles", "#styles"], ["Our work", "#work"], ["About", "#about"]].map(([label, href]) => <a key={label} className="py-2" href={href} onClick={() => setMobileOpen(false)}>{label}</a>)}</nav>}
