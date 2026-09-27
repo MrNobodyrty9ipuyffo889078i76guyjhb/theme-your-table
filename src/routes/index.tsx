@@ -169,7 +169,7 @@ function Index() {
 
       <div className="fixed right-3 top-1/2 z-40 flex -translate-y-1/2 flex-col gap-2.5 md:right-5" aria-label="Follow CIRO Menus on social media">
         {socialLinks.map((social) => <a key={social.label} href={social.href} target="_blank" rel="noreferrer" aria-label={`CIRO Menus on ${social.label}`} className="flex size-10 items-center justify-center rounded-full border border-line bg-card text-soft-ink shadow-[0_6px_18px_oklch(0.22_0.02_50/12%)] transition-all duration-200 hover:-translate-x-0.5 hover:border-flame hover:text-flame md:size-11">
-          <BrandIcon d={social.d} filled={social.filled} />
+          <BrandIcon d={social.d} filled={social.filled ?? false} />
         </a>)}
       </div>
 
