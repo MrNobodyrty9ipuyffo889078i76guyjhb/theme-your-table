@@ -37,6 +37,21 @@ const partnerMarks = [
   { icon: "✳", name: "YOUR KITCHEN", sub: "LOGO HERE" },
 ];
 
+function BrandIcon({ d, filled }: { d: string; filled?: boolean }) {
+  return (
+    <svg width="17" height="17" viewBox="0 0 24 24" fill={filled ? "currentColor" : "none"} stroke={filled ? "none" : "currentColor"} strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+      <path d={d} />
+    </svg>
+  );
+}
+
+const socialLinks = [
+  { label: "Facebook", href: "https://www.facebook.com", d: "M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z" },
+  { label: "Instagram", href: "https://www.instagram.com", d: "M12.53.02C13.84 0 15.14.01 16.44 0c.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.05-2.89-.35-4.2-.97-.57-.26-1.1-.59-1.62-.93-.01 2.92.01 5.84-.02 8.75-.08 1.4-.54 2.79-1.35 3.94-1.31 1.92-3.58 3.17-5.91 3.21-1.43.08-2.86-.31-4.08-1.03-2.02-1.19-3.44-3.37-3.65-5.71-.02-.5-.03-1-.01-1.49.18-1.9 1.12-3.72 2.58-4.96 1.66-1.44 3.98-2.13 6.15-1.72.02 1.48-.04 2.96-.04 4.44-.99-.32-2.15-.23-3.02.37-.63.41-1.11 1.04-1.36 1.75-.21.51-.15 1.07-.14 1.61.24 1.64 1.82 3.02 3.5 2.87 1.12-.01 2.19-.66 2.77-1.61.19-.33.4-.67.41-1.06.1-1.79.06-3.57.07-5.36.01-4.03-.01-8.05.02-12.07z", filled: true },
+  { label: "WhatsApp", href: "https://wa.me/", d: "M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413Z", filled: true },
+  { label: "TikTok", href: "https://www.tiktok.com", d: "M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-5.2 1.74 2.89 2.89 0 0 1 2.31-4.64 2.93 2.93 0 0 1 .88.13V9.4a6.84 6.84 0 0 0-1-.05A6.33 6.33 0 0 0 5 20.1a6.34 6.34 0 0 0 10.86-4.43v-7a8.16 8.16 0 0 0 4.77 1.52v-3.4a4.85 4.85 0 0 1-1-.1z", filled: true },
+];
+
 function Index() {
   const [filter, setFilter] = useState<Category>("All menus");
   const [selected, setSelected] = useState<number | null>(null);
@@ -72,7 +87,7 @@ function Index() {
               <a className="transition-colors hover:text-flame" href="#work">Our work</a>
               <a className="transition-colors hover:text-flame" href="#about">About</a>
             </nav>
-            <Button variant="flame" size="nav" className="hidden md:inline-flex" asChild><a href="#work">Explore menus <ArrowUpRight /></a></Button>
+            <Button variant="flame" size="nav" className="hidden md:inline-flex" asChild><a href="#work">Create Menu <ArrowUpRight /></a></Button>
             <Button variant="heroGhost" size="icon" className="md:hidden" aria-label={mobileOpen ? "Close menu" : "Open menu"} onClick={() => setMobileOpen(!mobileOpen)}>{mobileOpen ? <X /> : <MenuIcon />}</Button>
           </div>
           {mobileOpen && <nav className="flex flex-col gap-1 border-t border-paper/15 bg-ink px-6 py-4 text-sm md:hidden" aria-label="Mobile navigation">{[["Home", "#home"], ["Menu styles", "#styles"], ["Our work", "#work"], ["About", "#about"]].map(([label, href]) => <a key={label} className="py-2" href={href} onClick={() => setMobileOpen(false)}>{label}</a>)}</nav>}
@@ -151,6 +166,12 @@ function Index() {
         </div>
       </section>
       <footer className="bg-ink text-paper"><div className="mx-auto flex max-w-[1440px] flex-col gap-4 border-t border-paper/15 px-6 py-7 text-[11px] text-paper/45 md:flex-row md:items-center md:justify-between md:px-12 lg:px-16"><span className="text-[18px] font-extrabold text-paper">CIRO<span className="text-flame">.</span><span className="ml-2 text-[10px] font-medium uppercase tracking-[.2em] text-paper/50">Menus</span></span><span>MENUS WITH A LITTLE MORE TO SAY.</span><a href="#home" className="transition-colors hover:text-flame">BACK TO TOP ↑</a></div></footer>
+
+      <div className="fixed right-3 top-1/2 z-40 flex -translate-y-1/2 flex-col gap-2.5 md:right-5" aria-label="Follow CIRO Menus on social media">
+        {socialLinks.map((social) => <a key={social.label} href={social.href} target="_blank" rel="noreferrer" aria-label={`CIRO Menus on ${social.label}`} className="flex size-10 items-center justify-center rounded-full border border-line bg-card text-soft-ink shadow-[0_6px_18px_oklch(0.22_0.02_50/12%)] transition-all duration-200 hover:-translate-x-0.5 hover:border-flame hover:text-flame md:size-11">
+          <BrandIcon d={social.d} filled={social.filled} />
+        </a>)}
+      </div>
 
       {active && <div className="fixed inset-0 z-50 flex items-center justify-center bg-ink/85 p-4 backdrop-blur-sm" onMouseDown={(event) => { if (event.target === event.currentTarget) setSelected(null); }}>
         <div role="dialog" aria-modal="true" aria-label={`${active.title} menu preview`} className="relative grid max-h-[min(92vh,850px)] w-full max-w-[920px] overflow-y-auto rounded-[5px] bg-card shadow-2xl md:grid-cols-[.85fr_1fr]">
