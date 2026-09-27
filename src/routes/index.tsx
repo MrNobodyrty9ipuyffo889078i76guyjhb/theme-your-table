@@ -168,7 +168,7 @@ function Index() {
       <footer className="bg-ink text-paper"><div className="mx-auto flex max-w-[1440px] flex-col gap-4 border-t border-paper/15 px-6 py-7 text-[11px] text-paper/45 md:flex-row md:items-center md:justify-between md:px-12 lg:px-16"><span className="text-[18px] font-extrabold text-paper">CIRO<span className="text-flame">.</span><span className="ml-2 text-[10px] font-medium uppercase tracking-[.2em] text-paper/50">Menus</span></span><span>MENUS WITH A LITTLE MORE TO SAY.</span><a href="#home" className="transition-colors hover:text-flame">BACK TO TOP ↑</a></div></footer>
 
       <div className="fixed right-3 top-1/2 z-40 flex -translate-y-1/2 flex-col gap-2.5 md:right-5" aria-label="Follow CIRO Menus on social media">
-        {socialLinks.map((social) => <a key={social.label} href={social.href} target="_blank" rel="noreferrer" aria-label={`CIRO Menus on ${social.label}`} className="flex size-10 items-center justify-center rounded-full border border-line bg-card text-soft-ink shadow-[0_6px_18px_oklch(0.22_0.02_50/12%)] transition-all duration-200 hover:-translate-x-0.5 hover:border-flame hover:text-flame md:size-11">
+        {socialLinks.map((social) => <a key={social.label} href={social.href} target="_blank" rel="noreferrer" aria-label={`CIRO Menus on ${social.label}`} className={`flex size-10 items-center justify-center rounded-full border border-line bg-card shadow-[0_6px_18px_oklch(0.22_0.02_50/12%)] transition-all duration-200 hover:-translate-x-0.5 md:size-11 ${social.className}`}>
           <BrandIcon d={social.d} filled={social.filled ?? false} />
         </a>)}
       </div>
