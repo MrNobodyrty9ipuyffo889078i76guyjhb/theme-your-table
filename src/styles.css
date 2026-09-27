@@ -90,8 +90,13 @@
 .social-instagram:hover { border-color: #E1306C; box-shadow: 0 6px 18px #E1306C40; }
 .social-whatsapp { color: #25D366; }
 .social-whatsapp:hover { border-color: #25D366; box-shadow: 0 6px 18px #25D36640; }
-.social-tiktok { color: var(--paper); filter: drop-shadow(-1.2px -1.2px 0 #25F4EE) drop-shadow(1.2px 1.2px 0 #FE2C55); }
+.social-tiktok { color: var(--paper); }
 .social-tiktok:hover { border-color: #FE2C55; box-shadow: 0 6px 18px #FE2C5540; }
+.tiktok-layers { position: relative; display: inline-block; width: 20px; height: 20px; }
+.tiktok-layers svg { position: absolute; inset: 0; width: 100%; height: 100%; }
+.tiktok-cyan { transform: translate(-0.9px, -0.9px); }
+.tiktok-red { transform: translate(0.9px, 0.9px); }
+.tiktok-white { position: relative; }
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
   .marquee-track { animation: none; }
