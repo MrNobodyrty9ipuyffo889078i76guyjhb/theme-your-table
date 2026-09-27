@@ -59,6 +59,7 @@
   --ink: oklch(0.19 0.012 54);
   --paper: oklch(0.965 0.012 74);
   --flame: oklch(0.69 0.182 53);
+  --flame-shadow: oklch(0.69 0.182 53 / 20%);
   --line: oklch(0.8 0.014 70);
   --soft-ink: oklch(0.48 0.013 57);
 }

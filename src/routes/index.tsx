@@ -24,9 +24,9 @@ type Category = "All menus" | "Restaurant" | "Café" | "Drinks";
 const filters: Category[] = ["All menus", "Restaurant", "Café", "Drinks"];
 
 const menus = [
-  { id: 1, title: "The Dining Edit", category: "Restaurant" as Category, style: "ELEGANT · EDITORIAL", image: momo, number: "01", description: "A considered, image-led menu for restaurants that make every meal an occasion.", items: ["Signature momo", "Seasonal small plates", "Chef's specials"], theme: "menu-theme-dark" },
-  { id: 2, title: "The Everyday Table", category: "Café" as Category, style: "WARM · INVITING", image: tikka, number: "02", description: "Warm typography and clear sections make the everyday favorites feel special.", items: ["All-day favorites", "Freshly baked", "Coffee & more"], theme: "menu-theme-light" },
-  { id: 3, title: "After Hours", category: "Drinks" as Category, style: "BOLD · MODERN", image: drink, number: "03", description: "A drinks menu with a little more personality, made for the first sip and the last.", items: ["House cocktails", "Zero-proof drinks", "Something sparkling"], theme: "menu-theme-orange" },
+  { id: 1, title: "The Dining Edit", category: "Restaurant" as Category, style: "ELEGANT · EDITORIAL", image: momo, number: "01", description: "A considered, image-led menu for restaurants that make every meal an occasion.", items: ["Signature momo", "Seasonal small plates", "Chef's specials"] },
+  { id: 2, title: "The Everyday Table", category: "Café" as Category, style: "WARM · INVITING", image: tikka, number: "02", description: "Warm typography and clear sections make the everyday favorites feel special.", items: ["All-day favorites", "Freshly baked", "Coffee & more"] },
+  { id: 3, title: "After Hours", category: "Drinks" as Category, style: "BOLD · MODERN", image: drink, number: "03", description: "A drinks menu with a little more personality, made for the first sip and the last.", items: ["House cocktails", "Zero-proof drinks", "Something sparkling"] },
 ];
 
 const partnerMarks = [
@@ -98,9 +98,9 @@ function Index() {
           <p className="mb-6 text-center text-[10px] font-bold uppercase tracking-[.24em] text-paper/45">A PLACE FOR THE RESTAURANTS WE WORK WITH</p>
           <div className="marquee-mask overflow-hidden">
             <div className="marquee-track flex items-center" aria-label="Restaurant logo slots">
-              {[...partnerMarks, ...partnerMarks].map((mark, index) => <div key={index} className="flex w-[220px] shrink-0 items-center justify-center gap-3 border-r border-paper/10 px-6 text-paper/55 md:w-[280px]">
+              {[...partnerMarks, ...partnerMarks].map((mark, index) => <div key={index} className="flex w-[220px] shrink-0 items-center justify-center gap-3 border-r border-paper/10 px-6 text-paper/75 md:w-[280px]">
                 <span className="font-display text-[34px] leading-none text-flame/80">{mark.icon}</span>
-                <span className="flex flex-col text-[12px] font-bold tracking-[.1em] leading-tight">{mark.name}<span className="mt-1 text-[9px] font-medium tracking-[.2em] text-paper/35">{mark.sub}</span></span>
+                <span className="flex flex-col text-[12px] font-bold tracking-[.1em] leading-tight">{mark.name}<span className="mt-1 text-[9px] font-medium tracking-[.2em] text-paper/55">{mark.sub}</span></span>
               </div>)}
             </div>
           </div>
